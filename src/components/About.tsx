@@ -1,4 +1,7 @@
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const About = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
@@ -6,10 +9,10 @@ const About = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-              About CodeHeroes
+              {t('about.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Where programming meets adventure! We transform coding education into an epic quest.
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -17,26 +20,23 @@ const About = () => {
             {/* Content */}
             <div className="space-y-6">
               <div className="pixel-card">
-                <h3 className="text-2xl font-bold mb-4 text-pixel-green">Our Mission</h3>
+                <h3 className="text-2xl font-bold mb-4 text-pixel-green">{t('about.mission.title')}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Founded in 2020 with a simple belief: learning to code should be as exciting as playing your favorite video game. 
-                  We've revolutionized programming education by gamifying every aspect of the learning experience.
+                  {t('about.mission.content')}
                 </p>
               </div>
 
               <div className="pixel-card">
-                <h3 className="text-2xl font-bold mb-4 text-pixel-blue">Game-Like Learning</h3>
+                <h3 className="text-2xl font-bold mb-4 text-pixel-blue">{t('about.gameLike.title')}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our platform uses leveling systems, achievement badges, coding quests, and interactive challenges 
-                  to keep students engaged and motivated throughout their coding journey.
+                  {t('about.gameLike.content')}
                 </p>
               </div>
 
               <div className="pixel-card">
-                <h3 className="text-2xl font-bold mb-4 text-pixel-yellow">Expert Instructors</h3>
+                <h3 className="text-2xl font-bold mb-4 text-pixel-yellow">{t('about.experts.title')}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our team includes former game developers, software engineers, and education specialists 
-                  who understand how to make complex concepts accessible and fun for young minds.
+                  {t('about.experts.content')}
                 </p>
               </div>
             </div>
@@ -87,31 +87,31 @@ const About = () => {
 
           {/* Achievement Badges */}
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-8 text-primary">Our Achievements</h3>
+            <h3 className="text-2xl font-bold mb-8 text-primary">{t('about.achievements.title')}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="pixel-card text-center">
                 <div className="w-12 h-12 bg-pixel-green border-2 border-border mx-auto mb-2 flex items-center justify-center">
                   <span className="text-background font-bold">🏆</span>
                 </div>
-                <div className="text-sm font-bold">Best Ed-Tech 2023</div>
+                <div className="text-sm font-bold">{t('about.achievements.bestEdTech')}</div>
               </div>
               <div className="pixel-card text-center">
                 <div className="w-12 h-12 bg-pixel-blue border-2 border-border mx-auto mb-2 flex items-center justify-center">
                   <span className="text-background font-bold">⭐</span>
                 </div>
-                <div className="text-sm font-bold">5-Star Rating</div>
+                <div className="text-sm font-bold">{t('about.achievements.fiveStars')}</div>
               </div>
               <div className="pixel-card text-center">
                 <div className="w-12 h-12 bg-pixel-yellow border-2 border-border mx-auto mb-2 flex items-center justify-center">
                   <span className="text-background font-bold">🎯</span>
                 </div>
-                <div className="text-sm font-bold">100% Satisfaction</div>
+                <div className="text-sm font-bold">{t('about.achievements.satisfaction')}</div>
               </div>
               <div className="pixel-card text-center">
                 <div className="w-12 h-12 bg-pixel-red border-2 border-border mx-auto mb-2 flex items-center justify-center">
                   <span className="text-background font-bold">🚀</span>
                 </div>
-                <div className="text-sm font-bold">Innovation Award</div>
+                <div className="text-sm font-bold">{t('about.achievements.innovation')}</div>
               </div>
             </div>
           </div>

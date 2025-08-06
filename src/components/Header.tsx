@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b-2 border-border">
@@ -24,18 +27,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#courses" className="text-foreground hover:text-primary transition-colors">Courses</a>
-            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
-            <a href="#blog" className="text-foreground hover:text-primary transition-colors">Blog</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#home" className="text-foreground hover:text-primary transition-colors">{t('nav.home')}</a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">{t('nav.about')}</a>
+            <a href="#courses" className="text-foreground hover:text-primary transition-colors">{t('nav.courses')}</a>
+            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">{t('nav.testimonials')}</a>
+            <a href="#blog" className="text-foreground hover:text-primary transition-colors">{t('nav.blog')}</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">{t('nav.contact')}</a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button and Language Switcher */}
+          <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher />
             <Button className="pixel-button">
-              Join Now
+              {t('nav.joinNow')}
             </Button>
           </div>
 
@@ -54,15 +58,18 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 animate-slide-in">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-              <a href="#courses" className="text-foreground hover:text-primary transition-colors">Courses</a>
-              <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
-              <a href="#blog" className="text-foreground hover:text-primary transition-colors">Blog</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-              <Button className="pixel-button w-full mt-4">
-                Join Now
-              </Button>
+              <a href="#home" className="text-foreground hover:text-primary transition-colors">{t('nav.home')}</a>
+              <a href="#about" className="text-foreground hover:text-primary transition-colors">{t('nav.about')}</a>
+              <a href="#courses" className="text-foreground hover:text-primary transition-colors">{t('nav.courses')}</a>
+              <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">{t('nav.testimonials')}</a>
+              <a href="#blog" className="text-foreground hover:text-primary transition-colors">{t('nav.blog')}</a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors">{t('nav.contact')}</a>
+              <div className="flex justify-between items-center mt-4">
+                <LanguageSwitcher />
+                <Button className="pixel-button">
+                  {t('nav.joinNow')}
+                </Button>
+              </div>
             </nav>
           </div>
         )}

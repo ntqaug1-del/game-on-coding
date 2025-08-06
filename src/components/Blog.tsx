@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Blog = () => {
+  const { t } = useLanguage();
   const blogPosts = [
     {
       id: 1,
@@ -70,7 +72,15 @@ const Blog = () => {
     }
   ];
 
-  const categories = ["All", "Education", "Games", "Getting Started", "Development", "Technology", "Success Stories"];
+  const categories = [
+    t('blog.categories.all'), 
+    t('blog.categories.education'), 
+    t('blog.categories.games'), 
+    t('blog.categories.gettingStarted'), 
+    t('blog.categories.development'), 
+    t('blog.categories.technology'), 
+    t('blog.categories.successStories')
+  ];
 
   return (
     <section id="blog" className="py-20">
@@ -78,20 +88,20 @@ const Blog = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            CodeHeroes Blog
+            {t('blog.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Stay updated with the latest in coding education, tips for young programmers, and inspiring success stories.
+            {t('blog.subtitle')}
           </p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Button
               key={category}
-              variant={category === "All" ? "default" : "outline"}
-              className={`text-xs ${category === "All" ? "pixel-button" : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"}`}
+              variant={index === 0 ? "default" : "outline"}
+              className={`text-xs ${index === 0 ? "pixel-button" : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"}`}
             >
               {category}
             </Button>
@@ -100,7 +110,7 @@ const Blog = () => {
 
         {/* Featured Posts */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-primary">Featured Posts</h3>
+          <h3 className="text-2xl font-bold mb-8 text-primary">{t('blog.featured')}</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {blogPosts.filter(post => post.featured).map((post) => (
               <div key={post.id} className="pixel-card hover:transform hover:scale-105 transition-all duration-300">
@@ -128,7 +138,7 @@ const Blog = () => {
                       <div className="text-muted-foreground">{post.date}</div>
                     </div>
                     <Button className="pixel-button text-sm px-4 py-2">
-                      Read More
+                      {t('blog.readMore')}
                     </Button>
                   </div>
                 </div>
@@ -139,7 +149,7 @@ const Blog = () => {
 
         {/* Recent Posts */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-primary">Recent Posts</h3>
+          <h3 className="text-2xl font-bold mb-8 text-primary">{t('blog.recent')}</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.filter(post => !post.featured).map((post, index) => (
               <div 
@@ -172,7 +182,7 @@ const Blog = () => {
                       {post.author}<br/>{post.date}
                     </div>
                     <Button variant="outline" className="text-xs px-3 py-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                      Read
+                      {t('blog.read')}
                     </Button>
                   </div>
                 </div>
@@ -184,16 +194,16 @@ const Blog = () => {
         {/* Newsletter Signup */}
         <div className="mt-16 text-center">
           <div className="pixel-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-primary">Stay Updated!</h3>
+            <h3 className="text-2xl font-bold mb-4 text-primary">{t('blog.newsletter.title')}</h3>
             <p className="text-muted-foreground mb-6">
-              Subscribe to our newsletter for weekly coding tips, new course announcements, and inspiring student stories.
+              {t('blog.newsletter.content')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1 px-4 py-3 bg-input border-2 border-border text-foreground">
-                Enter your email address
+                {t('blog.newsletter.placeholder')}
               </div>
               <Button className="pixel-button">
-                Subscribe
+                {t('blog.newsletter.subscribe')}
               </Button>
             </div>
           </div>

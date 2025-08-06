@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background */}
@@ -25,23 +27,22 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto animate-bounce-in">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 glow-text animate-pixel-glow">
-            Learn to Code Like a
-            <span className="block text-pixel-yellow blink"> Game Hero!</span>
+            {t('hero.title')}
+            <span className="block text-pixel-yellow blink">{t('hero.titleHighlight')}</span>
           </h1>
           
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of young coders on an epic programming adventure. 
-            Master the art of coding through interactive lessons, fun projects, and game-like challenges!
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button className="pixel-button text-lg px-8 py-4">
-              🎮 Enroll Now
+              {t('hero.enrollNow')}
             </Button>
             <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4">
-              Watch Demo
+              {t('hero.watchDemo')}
             </Button>
           </div>
 
@@ -49,15 +50,15 @@ const Hero = () => {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="pixel-card text-center">
               <div className="text-3xl font-bold text-pixel-green">10,000+</div>
-              <div className="text-muted-foreground">Young Coders</div>
+              <div className="text-muted-foreground">{t('hero.stats.youngCoders')}</div>
             </div>
             <div className="pixel-card text-center">
               <div className="text-3xl font-bold text-pixel-blue">50+</div>
-              <div className="text-muted-foreground">Interactive Courses</div>
+              <div className="text-muted-foreground">{t('hero.stats.courses')}</div>
             </div>
             <div className="pixel-card text-center">
               <div className="text-3xl font-bold text-pixel-yellow">95%</div>
-              <div className="text-muted-foreground">Success Rate</div>
+              <div className="text-muted-foreground">{t('hero.stats.successRate')}</div>
             </div>
           </div>
         </div>

@@ -1,72 +1,74 @@
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Courses = () => {
+  const { t } = useLanguage();
   const courses = [
     {
       id: 1,
-      title: "Intro to Python",
-      description: "Start your coding journey with Python! Learn variables, loops, and functions through fun mini-games.",
-      ageRange: "Ages 10-14",
-      level: "Beginner",
-      duration: "8 weeks",
+      title: t('courses.list.python.title'),
+      description: t('courses.list.python.description'),
+      ageRange: t('courses.list.python.ageRange'),
+      level: t('courses.list.python.level'),
+      duration: t('courses.list.python.duration'),
       icon: "🐍",
       color: "pixel-green",
-      lessons: 24
+      lessons: t('courses.list.python.lessons')
     },
     {
       id: 2,
-      title: "Game Development with Scratch",
-      description: "Create your own games using Scratch's drag-and-drop interface. No prior experience needed!",
-      ageRange: "Ages 8-12",
-      level: "Beginner",
-      duration: "6 weeks",
+      title: t('courses.list.scratch.title'),
+      description: t('courses.list.scratch.description'),
+      ageRange: t('courses.list.scratch.ageRange'),
+      level: t('courses.list.scratch.level'),
+      duration: t('courses.list.scratch.duration'),
       icon: "🎮",
       color: "pixel-blue",
-      lessons: 18
+      lessons: t('courses.list.scratch.lessons')
     },
     {
       id: 3,
-      title: "Web Design Basics",
-      description: "Build amazing websites with HTML, CSS, and JavaScript. Create your own portfolio!",
-      ageRange: "Ages 12-16",
-      level: "Intermediate",
-      duration: "10 weeks",
+      title: t('courses.list.web.title'),
+      description: t('courses.list.web.description'),
+      ageRange: t('courses.list.web.ageRange'),
+      level: t('courses.list.web.level'),
+      duration: t('courses.list.web.duration'),
       icon: "🌐",
       color: "pixel-purple",
-      lessons: 30
+      lessons: t('courses.list.web.lessons')
     },
     {
       id: 4,
-      title: "Minecraft Modding",
-      description: "Code your own Minecraft mods using Java. Bring your wildest game ideas to life!",
-      ageRange: "Ages 13-18",
-      level: "Intermediate",
-      duration: "12 weeks",
+      title: t('courses.list.minecraft.title'),
+      description: t('courses.list.minecraft.description'),
+      ageRange: t('courses.list.minecraft.ageRange'),
+      level: t('courses.list.minecraft.level'),
+      duration: t('courses.list.minecraft.duration'),
       icon: "⛏️",
       color: "pixel-orange",
-      lessons: 36
+      lessons: t('courses.list.minecraft.lessons')
     },
     {
       id: 5,
-      title: "AI & Machine Learning",
-      description: "Discover the magic of AI! Build smart programs that can learn and make decisions.",
-      ageRange: "Ages 15-18",
-      level: "Advanced",
-      duration: "14 weeks",
+      title: t('courses.list.ai.title'),
+      description: t('courses.list.ai.description'),
+      ageRange: t('courses.list.ai.ageRange'),
+      level: t('courses.list.ai.level'),
+      duration: t('courses.list.ai.duration'),
       icon: "🤖",
       color: "pixel-red",
-      lessons: 42
+      lessons: t('courses.list.ai.lessons')
     },
     {
       id: 6,
-      title: "Mobile App Development",
-      description: "Create your own mobile apps! Learn to build apps for Android and iOS.",
-      ageRange: "Ages 14-18",
-      level: "Advanced",
-      duration: "16 weeks",
+      title: t('courses.list.mobile.title'),
+      description: t('courses.list.mobile.description'),
+      ageRange: t('courses.list.mobile.ageRange'),
+      level: t('courses.list.mobile.level'),
+      duration: t('courses.list.mobile.duration'),
       icon: "📱",
       color: "pixel-yellow",
-      lessons: 48
+      lessons: t('courses.list.mobile.lessons')
     }
   ];
 
@@ -76,10 +78,10 @@ const Courses = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Epic Courses
+            {t('courses.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose your coding adventure! Each course is designed to be engaging, interactive, and fun.
+            {t('courses.subtitle')}
           </p>
         </div>
 
@@ -116,18 +118,18 @@ const Courses = () => {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">{course.duration}</div>
-                  <div className="text-xs text-muted-foreground">Duration</div>
+                  <div className="text-xs text-muted-foreground">{t('courses.duration')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">{course.lessons}</div>
-                  <div className="text-xs text-muted-foreground">Lessons</div>
+                  <div className="text-xs text-muted-foreground">{t('courses.lessons')}</div>
                 </div>
               </div>
 
               {/* Progress Bar (Mock) */}
               <div className="mb-4">
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Course Progress</span>
+                  <span>{t('courses.courseProgress')}</span>
                   <span>0%</span>
                 </div>
                 <div className="w-full bg-muted h-2 border border-border">
@@ -137,7 +139,7 @@ const Courses = () => {
 
               {/* Learn More Button */}
               <Button className="w-full pixel-button">
-                Learn More
+                {t('courses.learnMore')}
               </Button>
             </div>
           ))}
@@ -149,22 +151,22 @@ const Courses = () => {
             <div className="w-16 h-16 bg-pixel-green border-2 border-border mx-auto mb-4 flex items-center justify-center">
               <span className="text-2xl">🎯</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">Interactive Lessons</h3>
-            <p className="text-muted-foreground">Learn by doing with hands-on coding exercises and real-time feedback.</p>
+            <h3 className="text-xl font-bold mb-2">{t('courses.features.interactive.title')}</h3>
+            <p className="text-muted-foreground">{t('courses.features.interactive.content')}</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 bg-pixel-blue border-2 border-border mx-auto mb-4 flex items-center justify-center">
               <span className="text-2xl">🏅</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">Achievement System</h3>
-            <p className="text-muted-foreground">Earn badges, unlock levels, and track your progress as you master new skills.</p>
+            <h3 className="text-xl font-bold mb-2">{t('courses.features.achievement.title')}</h3>
+            <p className="text-muted-foreground">{t('courses.features.achievement.content')}</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 bg-pixel-yellow border-2 border-border mx-auto mb-4 flex items-center justify-center">
               <span className="text-2xl">👥</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">Community Support</h3>
-            <p className="text-muted-foreground">Join a community of young coders and get help from instructors and peers.</p>
+            <h3 className="text-xl font-bold mb-2">{t('courses.features.community.title')}</h3>
+            <p className="text-muted-foreground">{t('courses.features.community.content')}</p>
           </div>
         </div>
       </div>

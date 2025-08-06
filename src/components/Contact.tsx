@@ -1,16 +1,18 @@
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Contact Us
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your coding adventure? Get in touch with our team of coding educators!
+            {t('contact.subtitle')}
           </p>
         </div>
 

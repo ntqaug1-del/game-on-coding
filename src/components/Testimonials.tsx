@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const { t } = useLanguage();
 
   const testimonials = [
     {
@@ -74,10 +76,10 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Hero Testimonials
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Hear from our coding heroes and their families about their amazing journeys!
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
@@ -147,7 +149,7 @@ const Testimonials = () => {
 
         {/* Parent Testimonials */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-primary">What Parents Say</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-primary">{t('testimonials.parentsSay')}</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {parentTestimonials.map((testimonial) => (
               <div key={testimonial.id} className="pixel-card">
@@ -165,19 +167,19 @@ const Testimonials = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
             <div className="text-3xl font-bold text-pixel-green mb-2">98%</div>
-            <div className="text-muted-foreground text-sm">Course Completion</div>
+            <div className="text-muted-foreground text-sm">{t('testimonials.stats.completion')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-pixel-blue mb-2">4.9/5</div>
-            <div className="text-muted-foreground text-sm">Average Rating</div>
+            <div className="text-muted-foreground text-sm">{t('testimonials.stats.rating')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-pixel-yellow mb-2">250+</div>
-            <div className="text-muted-foreground text-sm">Projects Created</div>
+            <div className="text-muted-foreground text-sm">{t('testimonials.stats.projects')}</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-pixel-red mb-2">100%</div>
-            <div className="text-muted-foreground text-sm">Would Recommend</div>
+            <div className="text-muted-foreground text-sm">{t('testimonials.stats.recommend')}</div>
           </div>
         </div>
       </div>

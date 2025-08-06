@@ -1,4 +1,7 @@
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-background border-t-2 border-border py-12">
       <div className="container mx-auto px-4">
