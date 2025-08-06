@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Retro Gaming Colors
+				'pixel-green': 'hsl(var(--pixel-green))',
+				'pixel-blue': 'hsl(var(--pixel-blue))',
+				'pixel-red': 'hsl(var(--pixel-red))',
+				'pixel-yellow': 'hsl(var(--pixel-yellow))',
+				'pixel-purple': 'hsl(var(--pixel-purple))',
+				'pixel-orange': 'hsl(var(--pixel-orange))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +91,51 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pixel-glow': {
+					'0%, 100%': {
+						textShadow: '0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary))'
+					},
+					'50%': {
+						textShadow: '0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						transform: 'translateX(-100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0.3)',
+						opacity: '0'
+					},
+					'50%': {
+						transform: 'scale(1.05)'
+					},
+					'70%': {
+						transform: 'scale(0.9)'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pixel-glow': 'pixel-glow 2s ease-in-out infinite',
+				'slide-in': 'slide-in 0.6s ease-out',
+				'bounce-in': 'bounce-in 0.6s ease-out'
+			},
+			fontFamily: {
+				'pixel': ['Courier New', 'monospace']
 			}
 		}
 	},
