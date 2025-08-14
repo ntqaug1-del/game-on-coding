@@ -10,19 +10,24 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-pixel-green to-pixel-blue border-2 border-border relative">
-                {/* Pixel art computer icon */}
+                {/* Pixel art trio logo - three interconnected squares */}
                 <div className="absolute inset-1 bg-background">
-                  <div className="w-full h-1 bg-pixel-green mt-1"></div>
-                  <div className="w-4 h-1 bg-pixel-blue mx-auto mt-1"></div>
-                  <div className="w-full h-1 bg-pixel-yellow mt-1"></div>
-                  <div className="w-2 h-2 bg-pixel-red mx-auto mt-1 rounded-full"></div>
+                  <div className="flex space-x-0.5 mt-1">
+                    <div className="w-2 h-2 bg-pixel-green"></div>
+                    <div className="w-2 h-2 bg-pixel-blue"></div>
+                    <div className="w-2 h-2 bg-pixel-yellow"></div>
+                  </div>
+                  <div className="flex space-x-0.5 mt-0.5">
+                    <div className="w-2 h-1.5 bg-pixel-red"></div>
+                    <div className="w-2 h-1.5 bg-pixel-purple"></div>
+                    <div className="w-2 h-1.5 bg-pixel-green"></div>
+                  </div>
                 </div>
               </div>
-              <span className="text-xl font-bold glow-text">CodeHeroes</span>
+              <span className="text-xl font-bold glow-text">CodeTrio</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Transforming young minds through gamified programming education. 
-              Join thousands of students on their coding adventures!
+              {t('footer.description')}
             </p>
             
             {/* Social Media Icons */}
@@ -44,7 +49,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-primary">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li><a href="#home" className="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
@@ -57,7 +62,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Contact Info</h3>
+            <h3 className="text-lg font-bold mb-4 text-primary">{t('footer.contactInfo')}</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2">
                 <span className="text-pixel-green">📍</span>
@@ -72,7 +77,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <span className="text-pixel-yellow">✉️</span>
-                <span className="text-muted-foreground">hello@codeheroes.edu</span>
+                <span className="text-muted-foreground">hello@codetrio.edu</span>
               </div>
             </div>
           </div>
@@ -83,7 +88,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Courses */}
             <div>
-              <h4 className="font-bold mb-3 text-primary">Popular Courses</h4>
+              <h4 className="font-bold mb-3 text-primary">{t('footer.popularCourses')}</h4>
               <ul className="space-y-1 text-sm">
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Python for Beginners</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Scratch Game Development</a></li>
@@ -94,7 +99,7 @@ const Footer = () => {
 
             {/* Resources */}
             <div>
-              <h4 className="font-bold mb-3 text-primary">Resources</h4>
+              <h4 className="font-bold mb-3 text-primary">{t('footer.resources')}</h4>
               <ul className="space-y-1 text-sm">
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Student Portal</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Parent Dashboard</a></li>
@@ -105,7 +110,7 @@ const Footer = () => {
 
             {/* Support */}
             <div>
-              <h4 className="font-bold mb-3 text-primary">Support</h4>
+              <h4 className="font-bold mb-3 text-primary">{t('footer.support')}</h4>
               <ul className="space-y-1 text-sm">
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Help Center</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Technical Support</a></li>
@@ -119,16 +124,16 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="border-t border-border mt-8 pt-8">
           <div className="max-w-md">
-            <h4 className="font-bold mb-3 text-primary">Stay Updated</h4>
+            <h4 className="font-bold mb-3 text-primary">{t('footer.stayUpdated')}</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Get weekly coding tips and course updates delivered to your inbox!
+              {t('blog.newsletter.content')}
             </p>
             <div className="flex space-x-2">
               <div className="flex-1 px-3 py-2 bg-input border border-border text-sm text-foreground">
-                Enter your email
+                {t('footer.emailPlaceholder')}
               </div>
               <div className="px-4 py-2 bg-primary text-primary-foreground border border-border cursor-pointer hover:bg-primary/90 transition-colors text-sm font-bold">
-                Subscribe
+                {t('blog.newsletter.subscribe')}
               </div>
             </div>
           </div>
@@ -138,7 +143,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 CodeHeroes. All rights reserved. | Building future programmers since 2020.
+              {t('footer.copyright')}
             </div>
             
             {/* Achievement Badges */}
@@ -161,7 +166,7 @@ const Footer = () => {
           {/* Powered by message */}
           <div className="text-center mt-4">
             <div className="text-xs text-muted-foreground">
-              Powered by passion for coding education and the next generation of programmers
+              {t('footer.poweredBy')}
             </div>
           </div>
         </div>

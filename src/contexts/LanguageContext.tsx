@@ -87,7 +87,7 @@ const translations = {
       }
     },
     about: {
-      title: 'About CodeHeroes',
+      title: 'About CodeTrio',
       subtitle: 'Where programming meets adventure! We transform coding education into an epic quest.',
       mission: {
         title: 'Our Mission',
@@ -193,7 +193,7 @@ const translations = {
       }
     },
     blog: {
-      title: 'CodeHeroes Blog',
+      title: 'CodeTrio Blog',
       subtitle: 'Stay updated with the latest in coding education, tips for young programmers, and inspiring success stories.',
       categories: {
         all: 'All',
@@ -271,7 +271,7 @@ const translations = {
       support: 'Support',
       stayUpdated: 'Stay Updated',
       emailPlaceholder: 'Enter your email',
-      copyright: '© 2024 CodeHeroes. All rights reserved. | Building future programmers since 2020.',
+      copyright: '© 2024 CodeTrio. All rights reserved. | Building future programmers since 2020.',
       poweredBy: 'Powered by passion for coding education and the next generation of programmers'
     }
   },
@@ -298,7 +298,7 @@ const translations = {
       }
     },
     about: {
-      title: 'Về CodeHeroes',
+      title: 'Về CodeTrio',
       subtitle: 'Nơi lập trình gặp gỡ phiêu lưu! Chúng tôi biến đổi việc học lập trình thành một cuộc phiêu lưu tuyệt vời.',
       mission: {
         title: 'Sứ Mệnh Của Chúng Tôi',
@@ -404,7 +404,7 @@ const translations = {
       }
     },
     blog: {
-      title: 'Blog CodeHeroes',
+      title: 'Blog CodeTrio',
       subtitle: 'Cập nhật những tin tức mới nhất về giáo dục lập trình, mẹo cho lập trình viên trẻ và những câu chuyện thành công đầy cảm hứng.',
       categories: {
         all: 'Tất Cả',
@@ -482,7 +482,7 @@ const translations = {
       support: 'Hỗ Trợ',
       stayUpdated: 'Luôn Cập Nhật',
       emailPlaceholder: 'Nhập email của bạn',
-      copyright: '© 2024 CodeHeroes. Bảo lưu mọi quyền. | Xây dựng lập trình viên tương lai từ năm 2020.',
+      copyright: '© 2024 CodeTrio. Bảo lưu mọi quyền. | Xây dựng lập trình viên tương lai từ năm 2020.',
       poweredBy: 'Được tạo ra bởi niềm đam mê giáo dục lập trình và thế hệ lập trình viên tương lai'
     }
   }

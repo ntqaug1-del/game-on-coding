@@ -14,15 +14,21 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-pixel-green to-pixel-blue border-2 border-border relative">
-              {/* Pixel art computer icon */}
+              {/* Pixel art trio logo - three interconnected squares */}
               <div className="absolute inset-1 bg-background">
-                <div className="w-full h-1 bg-pixel-green mt-1"></div>
-                <div className="w-4 h-1 bg-pixel-blue mx-auto mt-1"></div>
-                <div className="w-full h-1 bg-pixel-yellow mt-1"></div>
-                <div className="w-2 h-2 bg-pixel-red mx-auto mt-1 rounded-full"></div>
+                <div className="flex space-x-0.5 mt-1">
+                  <div className="w-2 h-2 bg-pixel-green"></div>
+                  <div className="w-2 h-2 bg-pixel-blue"></div>
+                  <div className="w-2 h-2 bg-pixel-yellow"></div>
+                </div>
+                <div className="flex space-x-0.5 mt-0.5">
+                  <div className="w-2 h-1.5 bg-pixel-red"></div>
+                  <div className="w-2 h-1.5 bg-pixel-purple"></div>
+                  <div className="w-2 h-1.5 bg-pixel-green"></div>
+                </div>
               </div>
             </div>
-            <span className="text-xl font-bold glow-text">CodeHeroes</span>
+            <span className="text-xl font-bold glow-text">CodeTrio</span>
           </div>
 
           {/* Desktop Navigation */}
