@@ -1,178 +1,20 @@
-import { useLanguage } from '@/contexts/LanguageContext';
+import React from 'react';
 
-const Footer = () => {
-  const { t } = useLanguage();
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-background border-t-2 border-border py-12">
+    <footer className="w-full py-6 bg-white/80 backdrop-blur-md border-t border-orange-100">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Logo & Description */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-pixel-green to-pixel-blue border-2 border-border relative">
-                {/* Pixel art trio logo - three interconnected squares */}
-                <div className="absolute inset-1 bg-background">
-                  <div className="flex space-x-0.5 mt-1">
-                    <div className="w-2 h-2 bg-pixel-green"></div>
-                    <div className="w-2 h-2 bg-pixel-blue"></div>
-                    <div className="w-2 h-2 bg-pixel-yellow"></div>
-                  </div>
-                  <div className="flex space-x-0.5 mt-0.5">
-                    <div className="w-2 h-1.5 bg-pixel-red"></div>
-                    <div className="w-2 h-1.5 bg-pixel-purple"></div>
-                    <div className="w-2 h-1.5 bg-pixel-green"></div>
-                  </div>
-                </div>
-              </div>
-              <span className="text-xl font-bold glow-text">CodeTrio</span>
-            </div>
-            <p className="text-muted-foreground mb-4 max-w-md">
-              {t('footer.description')}
-            </p>
-            
-            {/* Social Media Icons */}
-            <div className="flex space-x-3">
-              <div className="w-8 h-8 bg-pixel-blue border border-border flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer">
-                🐦
-              </div>
-              <div className="w-8 h-8 bg-pixel-purple border border-border flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer">
-                📸
-              </div>
-              <div className="w-8 h-8 bg-pixel-red border border-border flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer">
-                📺
-              </div>
-              <div className="w-8 h-8 bg-pixel-green border border-border flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer">
-                💼
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">{t('footer.quickLinks')}</h3>
-            <ul className="space-y-2">
-              <li><a href="#home" className="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#courses" className="text-muted-foreground hover:text-primary transition-colors">Courses</a></li>
-              <li><a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
-              <li><a href="#blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">{t('footer.contactInfo')}</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-2">
-                <span className="text-pixel-green">📍</span>
-                <div className="text-muted-foreground">
-                  123 Innovation Drive<br/>
-                  Tech Valley, CA 94025
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-pixel-blue">📞</span>
-                <span className="text-muted-foreground">+1 (555) 123-CODE</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-pixel-yellow">✉️</span>
-                <span className="text-muted-foreground">hello@codetrio.edu</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Links */}
-        <div className="border-t border-border mt-8 pt-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Courses */}
-            <div>
-              <h4 className="font-bold mb-3 text-primary">{t('footer.popularCourses')}</h4>
-              <ul className="space-y-1 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Python for Beginners</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Scratch Game Development</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Web Design Basics</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Minecraft Modding</a></li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="font-bold mb-3 text-primary">{t('footer.resources')}</h4>
-              <ul className="space-y-1 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Student Portal</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Parent Dashboard</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Coding Challenges</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Project Showcase</a></li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h4 className="font-bold mb-3 text-primary">{t('footer.support')}</h4>
-              <ul className="space-y-1 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Technical Support</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="border-t border-border mt-8 pt-8">
-          <div className="max-w-md">
-            <h4 className="font-bold mb-3 text-primary">{t('footer.stayUpdated')}</h4>
-            <p className="text-sm text-muted-foreground mb-4">
-              {t('blog.newsletter.content')}
-            </p>
-            <div className="flex space-x-2">
-              <div className="flex-1 px-3 py-2 bg-input border border-border text-sm text-foreground">
-                {t('footer.emailPlaceholder')}
-              </div>
-              <div className="px-4 py-2 bg-primary text-primary-foreground border border-border cursor-pointer hover:bg-primary/90 transition-colors text-sm font-bold">
-                {t('blog.newsletter.subscribe')}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-8 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              {t('footer.copyright')}
-            </div>
-            
-            {/* Achievement Badges */}
-            <div className="flex space-x-2">
-              <div className="w-6 h-6 bg-pixel-green border border-border flex items-center justify-center text-xs">
-                🏆
-              </div>
-              <div className="w-6 h-6 bg-pixel-blue border border-border flex items-center justify-center text-xs">
-                ⭐
-              </div>
-              <div className="w-6 h-6 bg-pixel-yellow border border-border flex items-center justify-center text-xs">
-                🎯
-              </div>
-              <div className="w-6 h-6 bg-pixel-red border border-border flex items-center justify-center text-xs">
-                🚀
-              </div>
-            </div>
-          </div>
-          
-          {/* Powered by message */}
-          <div className="text-center mt-4">
-            <div className="text-xs text-muted-foreground">
-              {t('footer.poweredBy')}
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center text-center">
+          <p className="text-orange-900 text-sm">
+            Developed with ❤️ by <span className="font-semibold">Quyet NT</span> + <span className="font-semibold">LLMS</span>
+          </p>
+          <p className="text-orange-700 text-xs mt-1">
+            A collection of useful utilities for your daily needs
+          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer; 
