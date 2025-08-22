@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient and shadow definitions -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B5563" />
+      <stop offset="100%" stop-color="#374151" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#4B5563" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="24" height="24" rx="6" fill="url(#gradient)" filter="url(#shadow)"/>
+
+  <!-- QR Code elements -->
+  <g transform="translate(4, 4)" fill="white">
+    <!-- Large squares in corners -->
+    <rect width="4" height="4" x="1" y="1" rx="1" opacity="0.9"/>
+    <rect width="4" height="4" x="11" y="1" rx="1" opacity="0.9"/>
+    <rect width="4" height="4" x="1" y="11" rx="1" opacity="0.9"/>
+    
+    <!-- Small squares and dots pattern -->
+    <rect width="2" height="2" x="11" y="11" rx="0.5" opacity="0.7"/>
+    <rect width="2" height="2" x="8" y="8" rx="0.5" opacity="0.7"/>
+    <circle cx="7" cy="11" r="0.75" opacity="0.6"/>
+    <circle cx="11" cy="7" r="0.75" opacity="0.6"/>
+    
+    <!-- Connecting lines -->
+    <path d="M3 7h4M7 3v4M13 7h2M7 13v2" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <rect width="22" height="22" x="1" y="1" rx="5.5" stroke="url(#gradient)" stroke-width="0.5" opacity="0.5"/>
+  <rect width="20" height="20" x="2" y="2" rx="5" stroke="url(#gradient)" stroke-width="0.25" opacity="0.3"/>
+</svg> 

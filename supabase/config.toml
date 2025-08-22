@@ -1,0 +1,10 @@
+
+project_id = "ludguqvdobqdvvcsrlnd"
+
+[functions.textToSpeech]
+verify_jwt = false
+import_map = "./import_map.json"
+
+[functions.updateApiKey]
+verify_jwt = false
+import_map = "./import_map.json"
