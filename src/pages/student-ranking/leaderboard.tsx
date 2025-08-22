@@ -121,22 +121,26 @@ const Leaderboard = () => {
   const others = students.slice(3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-primary/5 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 p-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
+        {/* Enhanced Header */}
+        <div className="flex items-center gap-6 mb-10">
           <Link to={`/student-ranking/${classId}/students`}>
-            <Button variant="outline" size="icon">
-              <ArrowLeft className="h-4 w-4" />
+            <Button variant="outline" size="icon" className="h-12 w-12 shadow-lg hover:shadow-xl transition-all duration-300">
+              <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
-          <div>
-            <h1 className="text-3xl font-bold flex items-center gap-2">
-              <Trophy className="h-8 w-8 text-yellow-500" />
-              Bảng Xếp Hạng
-            </h1>
-            <p className="text-muted-foreground">
-              {classInfo?.name || 'Lớp học'} • {students.length} học sinh
+          <div className="flex-1">
+            <div className="flex items-center gap-4 mb-2">
+              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                <Trophy className="h-6 w-6 text-white" />
+              </div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                Bảng Xếp Hạng
+              </h1>
+            </div>
+            <p className="text-slate-600 dark:text-slate-300 text-lg">
+              {classInfo?.name || 'Lớp học'} • {students.length} học sinh tham gia
             </p>
           </div>
         </div>
@@ -177,12 +181,12 @@ const Leaderboard = () => {
                           <div className="flex justify-center mb-3">
                             {getPositionIcon(2)}
                           </div>
-                          <Avatar className="h-16 w-16 mx-auto mb-3 border-4 border-white shadow-lg">
-                            <AvatarImage src={topThree[1].avatar_url || ''} />
-                            <AvatarFallback className="bg-white text-gray-600 text-lg font-bold">
-                              {topThree[1].name.charAt(0).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
+                           <Avatar className="h-20 w-20 mx-auto mb-3 border-4 border-white shadow-2xl ring-4 ring-white/50">
+                             <AvatarImage src={topThree[1].avatar_url || ''} className="object-cover" />
+                             <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xl font-bold">
+                               {topThree[1].name.charAt(0).toUpperCase()}
+                             </AvatarFallback>
+                           </Avatar>
                           <h3 className="font-bold text-lg mb-2">{topThree[1].name}</h3>
                           <p className="text-2xl font-bold mb-2">{topThree[1].score}</p>
                           <Badge className="bg-white/20 text-white border-white/30">
@@ -201,12 +205,12 @@ const Leaderboard = () => {
                           <div className="flex justify-center mb-4">
                             {getPositionIcon(1)}
                           </div>
-                          <Avatar className="h-20 w-20 mx-auto mb-4 border-4 border-white shadow-xl">
-                            <AvatarImage src={topThree[0].avatar_url || ''} />
-                            <AvatarFallback className="bg-white text-gray-600 text-xl font-bold">
-                              {topThree[0].name.charAt(0).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
+                           <Avatar className="h-24 w-24 mx-auto mb-4 border-6 border-white shadow-2xl ring-6 ring-yellow-300/50 transform hover:scale-110 transition-all duration-300">
+                             <AvatarImage src={topThree[0].avatar_url || ''} className="object-cover" />
+                             <AvatarFallback className="bg-gradient-to-br from-yellow-500 to-orange-600 text-white text-2xl font-bold">
+                               {topThree[0].name.charAt(0).toUpperCase()}
+                             </AvatarFallback>
+                           </Avatar>
                           <h3 className="font-bold text-xl mb-3">{topThree[0].name}</h3>
                           <p className="text-3xl font-bold mb-3">{topThree[0].score}</p>
                           <Badge className="bg-white/20 text-white border-white/30 text-lg px-3 py-1">
@@ -225,12 +229,12 @@ const Leaderboard = () => {
                           <div className="flex justify-center mb-3">
                             {getPositionIcon(3)}
                           </div>
-                          <Avatar className="h-16 w-16 mx-auto mb-3 border-4 border-white shadow-lg">
-                            <AvatarImage src={topThree[2].avatar_url || ''} />
-                            <AvatarFallback className="bg-white text-gray-600 text-lg font-bold">
-                              {topThree[2].name.charAt(0).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
+                           <Avatar className="h-20 w-20 mx-auto mb-3 border-4 border-white shadow-2xl ring-4 ring-white/50">
+                             <AvatarImage src={topThree[2].avatar_url || ''} className="object-cover" />
+                             <AvatarFallback className="bg-gradient-to-br from-orange-500 to-red-600 text-white text-xl font-bold">
+                               {topThree[2].name.charAt(0).toUpperCase()}
+                             </AvatarFallback>
+                           </Avatar>
                           <h3 className="font-bold text-lg mb-2">{topThree[2].name}</h3>
                           <p className="text-2xl font-bold mb-2">{topThree[2].score}</p>
                           <Badge className="bg-white/20 text-white border-white/30">
@@ -273,22 +277,32 @@ const Leaderboard = () => {
                             {getPositionIcon(index + 1)}
                           </div>
                         </TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-3">
-                            <Avatar className="h-10 w-10">
-                              <AvatarImage src={student.avatar_url || ''} />
-                              <AvatarFallback className="bg-primary/10">
-                                {student.name.charAt(0).toUpperCase()}
-                              </AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <p className="font-medium">{student.name}</p>
-                              <p className="text-sm text-muted-foreground">
-                                Thành viên từ {new Date(student.created_at).toLocaleDateString('vi-VN')}
-                              </p>
-                            </div>
-                          </div>
-                        </TableCell>
+                         <TableCell>
+                           <div className="flex items-center gap-4">
+                             <Avatar className={`${index < 3 ? 'h-14 w-14 border-4 border-white shadow-xl ring-4' : 'h-12 w-12 border-2 border-white shadow-lg ring-2'} ${
+                               index === 0 ? 'ring-yellow-300/50' : 
+                               index === 1 ? 'ring-gray-300/50' : 
+                               index === 2 ? 'ring-orange-300/50' : 
+                               'ring-blue-100 dark:ring-blue-900'
+                             } transition-all duration-300 hover:scale-110`}>
+                               <AvatarImage src={student.avatar_url || ''} className="object-cover" />
+                               <AvatarFallback className={`${
+                                 index === 0 ? 'bg-gradient-to-br from-yellow-500 to-orange-600' :
+                                 index === 1 ? 'bg-gradient-to-br from-gray-400 to-gray-600' :
+                                 index === 2 ? 'bg-gradient-to-br from-orange-500 to-red-600' :
+                                 'bg-gradient-to-br from-blue-500 to-purple-600'
+                               } text-white font-bold ${index < 3 ? 'text-lg' : 'text-base'}`}>
+                                 {student.name.charAt(0).toUpperCase()}
+                               </AvatarFallback>
+                             </Avatar>
+                             <div>
+                               <p className={`font-bold ${index < 3 ? 'text-lg' : 'text-base'}`}>{student.name}</p>
+                               <p className="text-sm text-muted-foreground">
+                                 Tham gia từ {new Date(student.created_at).toLocaleDateString('vi-VN')}
+                               </p>
+                             </div>
+                           </div>
+                         </TableCell>
                         <TableCell className="text-center">
                           <Badge className={`${getRankColor(student.rank)} text-white border-0`}>
                             {getRankIcon(student.rank)} {student.rank}
